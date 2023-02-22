@@ -107,35 +107,28 @@ keyboard10 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).a
 keyboard11 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button42).add(button43).add(button44).add(button45).add(button46).add(button47)
 keyboard12 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button48).add(button49).add(button50).add(button51)
 keyboard13 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(button52).add(button53).add(button54).add(button55)
-
 @dp.message_handler(commands=['start'])
 async def welcome(message: types.Message):
     await message.reply('请点击以下菜单选择, \n同时欢迎大家加入各科学习群。 \n若有什么疑问，可点击左下角的 /help 查询。', reply_markup=keyboard1)
-
 @dp.message_handler(commands=['help'])
 async def helper(message: types.Message):
     await message.reply('使用教程：\n 🚌 You can go back to the Main Menu by using /mainmenu in the list of the left hand side below. \n 🚌 使用者可通过左下角列表里的 \n /mainmenu 返回主菜单。\n \n关于所有科目 About Subjects: \n 🚌 All subjects groups are provided except Psv, Ask and Srt. \n 🚌 除了Psv, Ask ＆ Srt之外，所有理科和商科都有相关群组。\n 🚌 General Science is in the list of 商科.\n 🚌 科学可在商科的选项里查找。\n \n 🚌 This user guide will update according to any situations. \n 🚌 本使用教程将随着情况更新。', reply_markup=keyboard1)
-
 @dp.message_handler(commands=['mainmenu'])
 async def menu(message: types.Message):
     await message.answer('请点击以下菜单选择:', reply_markup=keyboard1)
-
 @dp.message_handler(commands=['terasmenu'])
 async def menu(message: types.Message):
     await message.answer('请点击以下菜单选择:', reply_markup=keyboard2)
-
 @dp.message_handler(commands=['artmenu'])
 async def menu(message: types.Message):
     await message.answer('请点击以下菜单选择:', reply_markup=keyboard3)
-
 @dp.message_handler(commands=['scmenu'])
 async def menu(message: types.Message):
     await message.answer('请点击以下菜单选择:', reply_markup=keyboard4)
-
 @dp.message_handler()
 async def kb_answer(message: types.Message):
     if message.text == '各科学习群':
-        await message.answer('以下是全科科目学习群链接：\n 必考科: \n BM: \n https://t.me/+j6UlLBhcPLE3NmM9 \n BI: \n https://t.me/+pzpLKCbxUJZmZTY1 \n BC: \n https://t.me/+UF1YdarLaz9iMmFl \n MM: \n https://t.me/+jeT-Xpc3Kl8yMmM1 \n PM: \n https://t.me/+ywepqgUB8tJlMzk1 \n SEJ: \n https://t.me/+lt-prgM48qk2MGM1 \n \n 商科: \n Acc : \n https://t.me/+B-HQPeHq5ik1NDk1 \n Eko : \n https://t.me/+m5hRLLiGSOdiMWNl \n Perniagaan : \n https://t.me/+X65z5D6iIeU4Yzdl \n Sc: \n https://t.me/+2vPbBO4EZNE0Y2E1 \n \n 理科： \n Fizik: \n https://t.me/+b50p16YkHTY4ZGY9 \n Kimia: \n https://t.me/+Cxq6au4BKDw0MGE1 \n Bio : \n https://t.me/+8BH-WBYeRf0yODc1 \n Add math: \n https://t.me/+NU843K2bc2I3MDhl')
+        await message.answer("以下是全科科目学习群链接：\n 必考科: \n BM: \n https://t.me/+j6UlLBhcPLE3NmM9 \n BI: \n https://t.me/+pzpLKCbxUJZmZTY1 \n BC: \n https://t.me/+UF1YdarLaz9iMmFl \n MM: \n https://t.me/+jeT-Xpc3Kl8yMmM1 \n PM: \n https://t.me/+ywepqgUB8tJlMzk1 \n SEJ: \n https://t.me/+lt-prgM48qk2MGM1 \n \n 商科: \n Acc : \n https://t.me/+B-HQPeHq5ik1NDk1 \n Eko : \n https://t.me/+m5hRLLiGSOdiMWNl \n Perniagaan : \n https://t.me/+X65z5D6iIeU4Yzdl \n Sc: \n https://t.me/+2vPbBO4EZNE0Y2E1 \n \n 理科： \n Fizik: \n https://t.me/+b50p16YkHTY4ZGY9 \n Kimia: \n https://t.me/+Cxq6au4BKDw0MGE1 \n Bio : \n https://t.me/+8BH-WBYeRf0yODc1 \n Add math: \n https://t.me/+NU843K2bc2I3MDhl")
     elif message.text == '必考科':
         await message.answer('请选择：', reply_markup=keyboard2)
     elif message.text == 'Notes / Nota ✍🏻':
