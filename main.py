@@ -113,18 +113,7 @@ async def welcome(message: types.Message):
 @dp.message_handler(commands=['help'])
 async def helper(message: types.Message):
     await message.reply('使用教程：\n 🚌 You can go back to the Main Menu by using /mainmenu in the list of the left hand side below. \n 🚌 使用者可通过左下角列表里的 \n /mainmenu 返回主菜单。\n \n关于所有科目 About Subjects: \n 🚌 All subjects groups are provided except Psv, Ask and Srt. \n 🚌 除了Psv, Ask ＆ Srt之外，所有理科和商科都有相关群组。\n 🚌 General Science is in the list of 商科.\n 🚌 科学可在商科的选项里查找。\n \n 🚌 This user guide will update according to any situations. \n 🚌 本使用教程将随着情况更新。', reply_markup=keyboard1)
-@dp.message_handler(commands=['mainmenu'])
-async def menu(message: types.Message):
-    await message.answer('请点击以下菜单选择:', reply_markup=keyboard1)
-@dp.message_handler(commands=['terasmenu'])
-async def menu(message: types.Message):
-    await message.answer('请点击以下菜单选择:', reply_markup=keyboard2)
-@dp.message_handler(commands=['artmenu'])
-async def menu(message: types.Message):
-    await message.answer('请点击以下菜单选择:', reply_markup=keyboard3)
-@dp.message_handler(commands=['scmenu'])
-async def menu(message: types.Message):
-    await message.answer('请点击以下菜单选择:', reply_markup=keyboard4)
+
 @dp.message_handler()
 async def kb_answer(message: types.Message):
     if message.text == '各科学习群':
