@@ -1,11 +1,11 @@
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from loguru import logger
 
 bot = Bot(token='6285295766:AAFyHSpyhw-PwKDa7jig8lwNQ58utfohejE')
 dp = Dispatcher(bot)
-def start_polling():
-    reset_webhook = 'https://sunlightgogogo.onrender.com'
-    executor.start_polling(dp)
+async def startup(dp) -> None:
+    logger.info("bot started")
 
 '#Main Menu'
 button1 = KeyboardButton('各科学习群')
@@ -143,3 +143,18 @@ async def kb_answer(message: types.Message):
         await message.answer('请选择：', reply_markup=keyboard13)
     else:
         await message.answer('还未更新，请尽请期待')
+async def shutdown(dp) -> None:
+    await dp.storage.close()
+    await dp.storage.wait_closed()
+    logger.info("bot finished")
+
+
+if __name__ == "__main__":
+    logger.add(
+        "logs/debug.log",
+        level="DEBUG",
+        format="{time} | {level} | {module}:{function}:{line} | {message}",
+        rotation="30 KB",
+        compression="zip",
+    )
+    executor.start_polling(dp, skip_updates=True, on_startup=startup, on_shutdown=shutdown)
