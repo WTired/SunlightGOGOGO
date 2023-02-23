@@ -141,4 +141,4 @@ async def kb_answer(message: types.Message):
     else:
         await message.answer('还未更新，请尽请期待')
 
-executor.start_polling(dp)
+
