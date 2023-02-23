@@ -3,7 +3,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 bot = Bot(token='6285295766:AAFyHSpyhw-PwKDa7jig8lwNQ58utfohejE')
 dp = Dispatcher(bot)
-
+executor.start_polling(dp, reset_webhook=None)
 '#Main Menu'
 button1 = KeyboardButton('各科学习群')
 button2 = KeyboardButton('必考科')
@@ -141,5 +141,4 @@ async def kb_answer(message: types.Message):
     else:
         await message.answer('还未更新，请尽请期待')
 
-if __name__ == "__main__":
-    executor.start_polling(dp, skip_updates=True)
+
