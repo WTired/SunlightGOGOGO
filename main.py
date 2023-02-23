@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-bot = Bot(token='5911408286:AAEe6fhclNtnws68S1qdittX4fHvQZIsvB8')
+bot = Bot(token='6285295766:AAFyHSpyhw-PwKDa7jig8lwNQ58utfohejE')
 dp = Dispatcher(bot)
 
 '#Main Menu'
