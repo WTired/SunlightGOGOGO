@@ -110,10 +110,6 @@ keyboard13 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).a
 @dp.message_handler(commands=['start'])
 async def welcome(message: types.Message):
     await message.reply('请点击以下菜单选择, \n同时欢迎大家加入各科学习群。 \n若有什么疑问，可点击左下角的 /help 查询。', reply_markup=keyboard1)
-@dp.message_handler(commands=['help'])
-async def helper(message: types.Message):
-    await message.reply('使用教程：\n 🚌 You can go back to the Main Menu by using /mainmenu in the list of the left hand side below. \n 🚌 使用者可通过左下角列表里的 \n /mainmenu 返回主菜单。\n \n关于所有科目 About Subjects: \n 🚌 All subjects groups are provided except Psv, Ask and Srt. \n 🚌 除了Psv, Ask ＆ Srt之外，所有理科和商科都有相关群组。\n 🚌 General Science is in the list of 商科.\n 🚌 科学可在商科的选项里查找。\n \n 🚌 This user guide will update according to any situations. \n 🚌 本使用教程将随着情况更新。', reply_markup=keyboard1)
-
 @dp.message_handler()
 async def kb_answer(message: types.Message):
     if message.text == '各科学习群':
