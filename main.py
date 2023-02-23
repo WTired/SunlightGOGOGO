@@ -3,8 +3,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 bot = Bot(token='6285295766:AAFyHSpyhw-PwKDa7jig8lwNQ58utfohejE')
 dp = Dispatcher(bot)
-def start_polling(reset_webhook=None):
-    await dp.bot.delete_webhook()
+def start_polling():
+    reset_webhook = 'https://sunlightgogogo.onrender.com'
     executor.start_polling(dp)
 
 '#Main Menu'
