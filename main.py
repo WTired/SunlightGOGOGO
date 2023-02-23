@@ -4,7 +4,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 bot = Bot(token='6285295766:AAFyHSpyhw-PwKDa7jig8lwNQ58utfohejE')
 dp = Dispatcher(bot)
 
-executor.start_polling()
+executor.start_polling(dp, skip_updates=True)
 
 '#Main Menu'
 button1 = KeyboardButton('各科学习群')
